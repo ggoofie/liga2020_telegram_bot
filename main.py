@@ -50,7 +50,7 @@ async def on_shutdown(dp):
 if __name__ == '__main__':
     start_webhook(
         dispatcher=dp,
-        webhook_path=API_TOKEN,
+        webhook_path=f'/{API_TOKEN}',
         on_startup=on_startup,
         on_shutdown=on_shutdown,
         skip_updates=True,
