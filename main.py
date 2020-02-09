@@ -1,6 +1,7 @@
 import logging
 import os
 from aiogram import Bot, Dispatcher, types
+from aiogram.dispatcher.webhook import SendMessage
 from aiogram.utils.executor import start_webhook
 
 API_TOKEN = os.environ.get('API_TOKEN')
@@ -43,7 +44,6 @@ async def on_shutdown(dp):
     # Close DB connection (if used)
     await dp.storage.close()
     await dp.storage.wait_closed()
-
     logging.warning('Bye!')
 
 
